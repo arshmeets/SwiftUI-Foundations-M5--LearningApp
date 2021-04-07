@@ -17,6 +17,7 @@
 		64D63CF7260A4148000024C8 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 64D63CF5260A4148000024C8 /* data.json */; };
 		64D63CF8260A4148000024C8 /* style.html in Resources */ = {isa = PBXBuildFile; fileRef = 64D63CF6260A4148000024C8 /* style.html */; };
 		64D63CFB260A4197000024C8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D63CFA260A4197000024C8 /* Models.swift */; };
+		64E9D24C261DF2A000C2D22F /* ContentViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E9D24B261DF2A000C2D22F /* ContentViewRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		64D63CF5260A4148000024C8 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		64D63CF6260A4148000024C8 /* style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = style.html; sourceTree = "<group>"; };
 		64D63CFA260A4197000024C8 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		64E9D24B261DF2A000C2D22F /* ContentViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				64D63CDD260A3B80000024C8 /* HomeView.swift */,
 				64425E05260BBFD9001FDAA6 /* HomeViewrow.swift */,
 				6462FDA1260E33C80079375B /* ContentView.swift */,
+				64E9D24B261DF2A000C2D22F /* ContentViewRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				64D63CDC260A3B80000024C8 /* LearningApp.swift in Sources */,
 				6462FDA2260E33C80079375B /* ContentView.swift in Sources */,
 				64D63CF3260A3C0E000024C8 /* ContentModel.swift in Sources */,
+				64E9D24C261DF2A000C2D22F /* ContentViewRow.swift in Sources */,
 				64425E06260BBFD9001FDAA6 /* HomeViewrow.swift in Sources */,
 				64D63CFB260A4197000024C8 /* Models.swift in Sources */,
 			);

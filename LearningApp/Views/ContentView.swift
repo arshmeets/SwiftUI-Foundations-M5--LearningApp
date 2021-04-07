@@ -17,30 +17,19 @@ struct ContentView: View {
             
             LazyVStack {
                 if model.currentModule != nil {
-                    ForEach(model.currentModule!.content.lessons) { lesson in
-                        // Lesson Card
-                        ZStack {
-                            
-                            Rectangle()
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                .shadow(radius: 5)
-                                .frame(height: 66)
-                        }
+                    ForEach(0..<model.currentModule!.content.lessons.count) { index in
+                        
+                        ContentViewRow(index: index)
                         
                     }
 
                 }
                                 
             }
+            .padding()
+            .navigationTitle("Learn \(model.currentModule?.category ?? "")")
             
         }
         
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
