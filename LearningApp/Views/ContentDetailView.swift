@@ -28,13 +28,28 @@ struct ContentDetailView: View {
             // Show the next lesson button, only if there is a next lesson
             if model.hasNextLesson() {
                 Button(action: {
+                    
                     model.nextLesson()
                     
                 }, label: {
-                    Text("Next Lesson")
+                    ZStack {
+                        
+                        Rectangle()
+                            .frame(height:48)
+                            .foregroundColor(.green)
+                            .cornerRadius(10)
+                            .shadow(radius:5)
+                        
+                        Text("Next Lesson: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")
+                            .foregroundColor(.white)
+                            .bold()
+                    }
+                    
+                    
                 })
             }
         }
+            .padding(.horizontal)
         
     }
 }
