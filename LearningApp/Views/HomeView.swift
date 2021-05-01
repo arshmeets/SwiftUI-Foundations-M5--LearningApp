@@ -28,7 +28,7 @@ struct HomeView: View {
                                 
                                 NavigationLink(
                                     destination:
-                                    ContentView()
+                                        ContentView()
                                         .onAppear(perform: {
                                             model.beginModule(module.id)
                                         }),
@@ -39,9 +39,19 @@ struct HomeView: View {
                                         HomeViewrow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, time: module.content.time, count: "\(module.content.lessons.count) Lessons")
                                     })
                                 
+                                NavigationLink(
+                                    destination:
+                                        TestView()
+                                        .onAppear(perform: {
+                                            model.beginTest(module.id)
+                                        }),
+                                    tag: module.id,
+                                    selection: $model.currentTestSelected,
+                                    label: {
+                                        // Test Card
+                                        HomeViewrow(image: module.test.image, title: " \(module.category) Test", description: module.test.description, time: module.test.time, count: "\(module.test.questions.count) Lessons")
+                                    })
                                 
-                                // Test Card
-                                HomeViewrow(image: module.test.image, title: " \(module.category) Test", description: module.test.description, time: module.test.time, count: "\(module.test.questions.count) Lessons")
                             }
                             
                         }
