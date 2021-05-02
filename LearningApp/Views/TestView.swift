@@ -17,8 +17,10 @@ struct TestView: View {
             
             VStack {
                 // Question number
+                Text("Question \(model.currentLessonIndex + 1) of \(model.currentModule?.test.questions.count ?? 0)")
                 
                 // Question
+                CodeTextView()
                 
                 // Answers
                 
