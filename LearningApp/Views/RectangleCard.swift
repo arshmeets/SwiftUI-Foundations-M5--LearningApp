@@ -13,7 +13,7 @@ struct RectangleCard: View {
     
     var body: some View {
         Rectangle()
-            .foregroundColor(.green)
+            .foregroundColor(color)
             .cornerRadius(10)
             .shadow(radius:5)
     }
