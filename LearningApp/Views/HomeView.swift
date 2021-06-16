@@ -64,6 +64,20 @@ struct HomeView: View {
                 
             }
             .navigationTitle("Get Started")
+            
+            // Sets the current module back to nil so that content view is able to skip over it's if statement & go to the ContentViewRow to run the check that the index falls within the count of the module
+            .onChange(of: model.currentContentSelected) { changedValue in
+                if changedValue == nil {
+                    model.currentModule = nil
+                }
+            }
+            
+            // Same thing as currentContentSelected except it's for the currentTestSelected
+            .onChange(of: model.currentTestSelected) { changedValue in
+                if changedValue == nil {
+                    model.currentModule = nil
+                }
+            }
         }
         
     }
