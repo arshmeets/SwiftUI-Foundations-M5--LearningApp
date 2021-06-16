@@ -13,10 +13,11 @@ struct TestView: View {
     @State var selectedAnswerIndex: Int?
     @State var numCorrect = 0
     @State var submitted = false
+    @State var showResults = false
     
     var body: some View {
         
-        if model.currentQuestion != nil {
+        if model.currentQuestion != nil && showResults == false {
             
             VStack (alignment: .leading) {
                 // Question number
@@ -97,12 +98,24 @@ struct TestView: View {
                     
                     // Check if answer has been submitted
                     if submitted == true {
-                        // Answer has already been submitted, move to the next question
-                        model.nextQuestion()
                         
-                        // Reset properties
-                        submitted = false
-                        selectedAnswerIndex = nil
+                        // Check if it's the last question
+                        if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
+                            
+                            // Show the results
+                            showResults = true
+                            
+                        }
+                        else {
+                            // Answer has already been submitted, move to the next question
+                            model.nextQuestion()
+                            
+                            // Reset properties
+                            submitted = false
+                            selectedAnswerIndex = nil
+                        }
+                        
+                        
                     }
                     else {
                         // Submit the answer
@@ -135,10 +148,12 @@ struct TestView: View {
             
             .navigationBarTitle("\(model.currentModule?.category ?? "") Test")
         }
-        
-        else {
+        else if showResults == true {
             // The current question is nil, we show the result view
             TestResultView(numCorrect: numCorrect)
+        }
+        else {
+            ProgressView()
         }
     }
     
@@ -146,7 +161,7 @@ struct TestView: View {
         
         // Check if the answer has been submitted
         if submitted == true {
-            if  model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
+            if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
                 // This is the last question
                 return "Finish"
             }
